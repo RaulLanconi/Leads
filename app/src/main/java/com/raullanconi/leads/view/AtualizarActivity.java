@@ -48,7 +48,7 @@ public class AtualizarActivity extends Activity {
 
         textIdUpdate.setText("ID: " + pessoa.getId());
         editNomeUpdate.setText(pessoa.getNome());
-        editTelefoneUpdate.setText(pessoa.getTelefone());
+        editTelefoneUpdate.setText(String.valueOf(pessoa.getTelefone()));
 
         btnUpdate.setOnClickListener(new AdapterView.OnClickListener() {
 
@@ -74,30 +74,30 @@ public class AtualizarActivity extends Activity {
                             public void onClick(DialogInterface dialog, int which) {
 
                                 if(editNomeUpdate.getText().toString().isEmpty() || editTelefoneUpdate.getText().toString().isEmpty()) {
-                                    Toast.makeText(AtualizarActivity.this, "Nome e Telefone não podem ser vazios!", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(AtualizarActivity.this, "Nome e Telefone não podem ser vazios!", Toast.LENGTH_SHORT).show();
                                     return;
                                 }
 
                                 if(editNomeUpdate.getText().toString().length() > 80) {
-                                    Toast.makeText(AtualizarActivity.this, "Nome não pode ser maior que 80 caracteres!", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(AtualizarActivity.this, "Nome não pode ser maior que 80 caracteres!", Toast.LENGTH_SHORT).show();
                                     return;
                                 }
                                 else if(editTelefoneUpdate.getText().toString().length() > 11) {
-                                    Toast.makeText(AtualizarActivity.this, "Telefone não pode ser maior que 11 caracteres!", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(AtualizarActivity.this, "Telefone não pode ser maior que 11 caracteres!", Toast.LENGTH_SHORT).show();
                                     return;
                                 }
 
 
                                 pessoa.setNome(editNomeUpdate.getText().toString());
-                                pessoa.setTelefone(editTelefoneUpdate.getText().toString());
+                                pessoa.setTelefone(Integer.valueOf(editTelefoneUpdate.getText().toString()));
 
                                 pessoaDTO = pessoaController.update(pessoa, AtualizarActivity.this);
 
                                 if(pessoaDTO.isOk()) {
-                                    Toast.makeText(AtualizarActivity.this, pessoaDTO.getMessage(), Toast.LENGTH_LONG).show();
+                                    Toast.makeText(AtualizarActivity.this, pessoaDTO.getMessage(), Toast.LENGTH_SHORT).show();
                                 }
                                 else
-                                    Toast.makeText(AtualizarActivity.this, pessoaDTO.getMessage(), Toast.LENGTH_LONG).show();
+                                    Toast.makeText(AtualizarActivity.this, pessoaDTO.getMessage(), Toast.LENGTH_SHORT).show();
 
                                 finish();
 

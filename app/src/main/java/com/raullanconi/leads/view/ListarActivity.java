@@ -41,7 +41,7 @@ public class ListarActivity extends Activity {
 
         if(pessoaDTO.isOk()) {
 
-            Toast.makeText(ListarActivity.this, pessoaDTO.getMessage(), Toast.LENGTH_LONG).show();
+            Toast.makeText(ListarActivity.this, pessoaDTO.getMessage(), Toast.LENGTH_SHORT).show();
             List<Pessoa> listaPessoa = pessoaDTO.getListObject();
             listViewPessoa = (ListView) findViewById(R.id.listaPessoa);
             listViewPessoa.setAdapter(new PessoaAdapter(this, R.layout.item_pessoa, listaPessoa));
@@ -82,7 +82,7 @@ public class ListarActivity extends Activity {
                                                 public void onClick(DialogInterface dialog, int which) {
 
                                                     pessoaDTO = pessoaController.delete((listaPessoa.get(pPosition)).getId(), ListarActivity.this);
-                                                    Toast.makeText(ListarActivity.this, pessoaDTO.getMessage(), Toast.LENGTH_LONG).show();
+                                                    Toast.makeText(ListarActivity.this, pessoaDTO.getMessage(), Toast.LENGTH_SHORT).show();
                                                     finish();
 
                                                 }
@@ -126,7 +126,7 @@ public class ListarActivity extends Activity {
 
         }
         else
-            Toast.makeText(ListarActivity.this, pessoaDTO.getMessage(), Toast.LENGTH_LONG).show();
+            Toast.makeText(ListarActivity.this, pessoaDTO.getMessage(), Toast.LENGTH_SHORT).show();
 
         btnVoltar.setOnClickListener(new AdapterView.OnClickListener() {
 

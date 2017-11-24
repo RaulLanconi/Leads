@@ -46,7 +46,7 @@ public class DataBaseFactory extends SQLiteOpenHelper {
         String cmdSql = "CREATE TABLE " + DataBase.TABELA_PESSOA + "("
                 + DataBase.ID_PESSOA + " integer primary key autoincrement,"
                 + DataBase.NOME_PESSOA + " text,"
-                + DataBase.TELEFONE_PESSOA + " text"
+                + DataBase.TELEFONE_PESSOA + " number"
                 + ")";
 
         pSQLiteDataBase.execSQL(cmdSql);

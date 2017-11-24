@@ -33,9 +33,10 @@ public class Pessoa implements Serializable {
      */
     private String nome;
     /**
-     * Atributo String telefone, referente ao telefone de Pessoa no sistema, atributo da tabela Pessoa.
+     * Atributo long telefone, referente ao telefone de Pessoa no sistema, atributo da tabela
+     * Pessoa.
      */
-    private String telefone;
+    private long telefone;
 
     /**
      * Construtor padrão da Classe Pessoa.
@@ -47,13 +48,13 @@ public class Pessoa implements Serializable {
     }
 
     /**
-     * Construtor Pessoa(int pId, String pNome, String pTelefone) da Classe Pessoa.
+     * Construtor Pessoa(int pId, String pNome, long pTelefone) da Classe Pessoa.
      *
      * @param pId
      * @param pNome
      * @param pTelefone
      */
-    public Pessoa(int pId, String pNome, String pTelefone) {
+    public Pessoa(int pId, String pNome, long pTelefone) {
 
         super();
         setId(pId);
@@ -93,13 +94,13 @@ public class Pessoa implements Serializable {
     /**
      * @return the telefone
      */
-    public String getTelefone() {
+    public long getTelefone() {
         return telefone;
     }
     /**
      * @param pTelefone the telefone to set
      */
-    public void setTelefone(String pTelefone) {
+    public void setTelefone(long pTelefone) {
         Validador.validar(pTelefone, PessoaValidator.validacaoTelefone);
         this.telefone = pTelefone;
     }

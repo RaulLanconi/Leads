@@ -63,30 +63,30 @@ public class CadastroActivity extends Activity {
                             public void onClick(DialogInterface dialog, int which) {
 
                                 if(editNome.getText().toString().isEmpty() || editTelefone.getText().toString().isEmpty()) {
-                                    Toast.makeText(CadastroActivity.this, "Nome e Telefone não podem ser vazios!", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(CadastroActivity.this, "Nome e Telefone não podem ser vazios!", Toast.LENGTH_SHORT).show();
                                     return;
                                 }
 
                                 if(editNome.getText().toString().length() > 80) {
-                                    Toast.makeText(CadastroActivity.this, "Nome não pode ser maior que 80 caracteres!", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(CadastroActivity.this, "Nome não pode ser maior que 80 caracteres!", Toast.LENGTH_SHORT).show();
                                     return;
                                 }
                                 else if(editTelefone.getText().toString().length() > 11) {
-                                    Toast.makeText(CadastroActivity.this, "Telefone não pode ser maior que 11 caracteres!", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(CadastroActivity.this, "Telefone não pode ser maior que 11 caracteres!", Toast.LENGTH_SHORT).show();
                                     return;
                                 }
 
                                 pessoa.setNome(editNome.getText().toString());
-                                pessoa.setTelefone(editTelefone.getText().toString());
+                                pessoa.setTelefone(Long.valueOf(editTelefone.getText().toString()));
 
                                 pessoaDTO = pessoaController.create(pessoa, CadastroActivity.this);
 
                                 if(pessoaDTO.isOk()) {
                                     pessoa = pessoaDTO.getObject();
-                                    Toast.makeText(CadastroActivity.this, pessoaDTO.getMessage(), Toast.LENGTH_LONG).show();
+                                    Toast.makeText(CadastroActivity.this, pessoaDTO.getMessage(), Toast.LENGTH_SHORT).show();
                                 }
                                 else
-                                    Toast.makeText(CadastroActivity.this, pessoaDTO.getMessage(), Toast.LENGTH_LONG).show();
+                                    Toast.makeText(CadastroActivity.this, pessoaDTO.getMessage(), Toast.LENGTH_SHORT).show();
 
                                 finish();
 

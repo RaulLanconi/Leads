@@ -17,10 +17,8 @@ public class PessoaValidator {
 	};
 
 	public static final AbstractValidator[] validacaoTelefone = {
-			new ValidacaoNulo("Telefone da Pessoa"),
-			new ValidacaoVazio("Telefone da Pessoa"),
-			new ValidacaoTamanhoMinimo("Telefone da Pessoa", 1),
-			new ValidacaoTamanhoMaximo("Telefone da Pessoa", 11)
+			new ValidacaoQuantidadeMinimaDigitos("Telefone da Pessoa", 1),
+			new ValidacaoQuantidadeMaximaDigitos("Telefone da Pessoa", 12)
 	};
 
 }

@@ -245,7 +245,7 @@ public class PessoaDaoSqlite extends AbstractDaoSqlite<Pessoa> implements Pessoa
 
         pessoa.setId(pCursor.getInt(pCursor.getColumnIndexOrThrow(DataBase.ID_PESSOA)));
         pessoa.setNome(pCursor.getString(pCursor.getColumnIndexOrThrow(DataBase.NOME_PESSOA)));
-        pessoa.setTelefone(pCursor.getString(pCursor.getColumnIndexOrThrow(DataBase.TELEFONE_PESSOA)));
+        pessoa.setTelefone(pCursor.getLong(pCursor.getColumnIndexOrThrow(DataBase.TELEFONE_PESSOA)));
 
         return pessoa;
 
